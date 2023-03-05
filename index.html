@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vasco da Gama</title>
+	<!-- Adicione o link para o arquivo de fonte do Font Awesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-9GuH9AEfR0FGGgV7KoEiSvV7ILRjh1bctc7flm3P4yCkQzKs/Hz+7ud2FW1wv96snciToFTDgh/P1NrkNkkzLg==" crossorigin="anonymous" />
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		.logo {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+		}
+
+		.logo img {
+			max-width: 100%;
+			max-height: 100%;
+		}
+
+		.background {
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			z-index: -1;
+		}
+
+		/* adicione aqui suas animações */
+		.emoji {
+			position: absolute;
+			animation: float 5s infinite;
+		}
+
+		@keyframes float {
+			0% {
+				transform: translatey(0px);
+			}
+			50% {
+				transform: translatey(-30px);
+			}
+			100% {
+				transform: translatey(0px);
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="logo">
+		<!-- Utilize o ícone do Font Awesome para exibir o símbolo do Vasco da Gama -->
+		<i class="fas fa-cross fa-5x"></i>
+	</div>
+
+	<div class="background">
+		<!-- Aqui é onde as animações serão adicionadas -->
+	</div>
+
+	<script>
+		document.addEventListener('click', function(event) {
+			for (var i = 0; i < 5; i++) {
+				var emoji = document.createElement('span');
+				// Utilize o ícone do Font Awesome para exibir o símbolo do Vasco da Gama
+				emoji.innerHTML = '<i class="fas fa-cross"></i>';
+				emoji.classList.add('emoji');
+				emoji.style.left = event.pageX + 'px';
+				emoji.style.top = event.pageY + 'px';
+				document.body.appendChild(emoji);
+			}
+		});
+	</script>
+
+	<script>
+		for (var i = 0; i < 20; i++) {
+			var emoji = document.createElement('span');
+			// Utilize o ícone do Font Awesome para exibir o símbolo do Vasco da Gama
+			emoji.innerHTML = '<i class="fas fa-cross"></i>';
+			emoji.classList.add('emoji');
+			emoji.style.left = Math.random() * window.innerWidth + 'px';
+			emoji.style.top = Math.random() * window.innerHeight + 'px';
+			document.querySelector('.background').appendChild(emoji);
+		}
+	</script>
+</body>
+</html>
